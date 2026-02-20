@@ -1,51 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-int findsecondmax(int arr[], int size, int *max, int *secondmax)
+int enbuyuk2bul(int arr[], int size)
 {
     if (size == 2)
     {
-        if (arr[0] > arr[1])
+        if (arr[0] < arr[1])
         {
-            *max = arr[0];
-            *secondmax = arr[1];
+            int temp = arr[0];
+            arr[0] = arr[1];
+            arr[1] = temp;
         }
-        else
-        {
-            *max = arr[1];
-            *secondmax = arr[0];
-        }
-        return 0;
+        return arr[1];
     }
 
-    findsecondmax(arr, size - 1, max, secondmax);
+    enbuyuk2bul(arr + 1, size - 1);
 
-    int lastelement = arr[size - 1];
+    int current = arr[0];
+    int maxrest = arr[1];
+    int maxrest2 = arr[2];
 
-    if (lastelement > *max)
+    if (current > maxrest)
     {
-        *secondmax = *max;
-        *max = lastelement;
+        arr[0] = current;
+        arr[1] = maxrest;
     }
-    else if (lastelement > *secondmax && lastelement != *max)
+    else if (current > maxrest2 && current != maxrest)
     {
-        *secondmax = lastelement;
+        arr[0] = maxrest;
+        arr[1] = current;
     }
+    else
+    {
+        arr[0] = maxrest;
+        arr[1] = maxrest2;
+    }
+
+    return arr[1];
 }
 
 int main()
 {
-    int numbers[10] = {12, 45, 7, 89, 23, 56, 91, 34, 67, 5};
-    int size = 10;
+    int sayilar[10] = {12, 45, 7, 88, 23, 56, 91, 34, 67, 5};
 
-    // Şampiyon ve ikinciyi tutacağımız boş değişkenler
-    int maxDeger, ikinciDeger;
+    int boyut = 10;
 
-    findsecondmax(numbers, size, &maxDeger, &ikinciDeger);
+    int result = enbuyuk2bul(sayilar, boyut);
 
-    // Sonuçları ekrana yazdırıyoruz
-    printf("En buyuk sayi (Sampiyon): %d\n", maxDeger);
-    printf("En buyuk 2. sayi (Ikinci): %d\n", ikinciDeger);
+    printf("%d", result);
 
     return 0;
 }
