@@ -24,7 +24,7 @@ int mukemmelbul(int sayi)
     {
         return -1;
     }
-
+    
     int toplam = bolentoplami(sayi, sayi - 1);
 
     if (toplam == sayi)
