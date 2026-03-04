@@ -25,9 +25,9 @@ int main()
 {
     int sayilar[10] = {12, 45, 7, 89, 23, 56, 91, 34, 67, 5};
 
-    int boyut = 10;
+    int size = 10;
 
-    int result = enbuyukbul(sayilar, boyut);
+    int result = enbuyukbul(sayilar, size);
 
     printf("%d", result);
 
