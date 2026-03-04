@@ -22,7 +22,7 @@ int countDigits(int num)
     return 1 + countDigits(num / 10);
 }
 
-int cevir(int num)
+int convertToNines(int num)
 {
     if (num > -10 && num < 10)
     {
@@ -31,7 +31,7 @@ int cevir(int num)
 
     int digit = countDigits(num);
 
-    return power(10, digit - 1) * 9 + cevir(num / 10);
+    return power(10, digit - 1) * 9 + convertToNines(num / 10);
 }
 
 int main()
@@ -41,7 +41,7 @@ int main()
     printf("Enter a number ");
     scanf("%d", &num);
 
-    int result = cevir(num);
+    int result = convertToNines(num);
 
     printf("%d", result);
 
