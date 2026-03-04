@@ -2,55 +2,55 @@
 #include <stdlib.h>
 #include <time.h>
 
-int bolentoplami(int sayi, int bolen)
+int bolentoplami(int num, int bolen)
 {
     if (bolen == 0)
     {
         return 0;
     }
 
-    if (sayi % bolen == 0)
+    if (num % bolen == 0)
     {
-        return bolen + bolentoplami(sayi, bolen - 1);
+        return bolen + bolentoplami(num, bolen - 1);
     }
     else
     {
-        return bolentoplami(sayi, bolen - 1);
+        return bolentoplami(num, bolen - 1);
     }
 }
-int mukemmelbul(int sayi)
+int mukemmelbul(int num)
 {
-    if (sayi < 6)
+    if (num < 6)
     {
         return -1;
     }
     
-    int toplam = bolentoplami(sayi, sayi - 1);
+    int toplam = bolentoplami(num, num - 1);
 
-    if (toplam == sayi)
+    if (toplam == num)
     {
         return toplam;
     }
 
-    return mukemmelbul(sayi - 1);
+    return mukemmelbul(num - 1);
 }
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi gir ");
-    scanf("%d", &sayi);
+    printf("Enter a number ");
+    scanf("%d", &num);
 
-    int result = mukemmelbul(sayi - 1);
+    int result = mukemmelbul(num - 1);
 
     if (result == -1)
     {
-        printf("muk sayi yok");
+        printf("muk num yok");
     }
     else
     {
-        printf("muk sayi: %d", result);
+        printf("muk num: %d", result);
     }
 
     return 0;
