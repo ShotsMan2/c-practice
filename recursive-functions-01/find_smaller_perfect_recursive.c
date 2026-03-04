@@ -46,11 +46,11 @@ int main()
 
     if (result == -1)
     {
-        printf("muk num yok");
+        printf("No perfect number found.\n");
     }
     else
     {
-        printf("muk num: %d", result);
+        printf("Perfect Number: %d", result);
     }
 
     return 0;
