@@ -2,21 +2,21 @@
 #include <stdlib.h>
 #include <time.h>
 
-void cevir(int sayi)
+void cevir(int num)
 {
     int sum = 0;
 
-    while (sayi > 0)
+    while (num > 0)
     {
-        int bit1 = sayi & 1;
-        int bit2 = (sayi >> 1) & 1;
+        int bit1 = num & 1;
+        int bit2 = (num >> 1) & 1;
 
         if (bit1 != bit2)
         {
             sum++;
         }
 
-        sayi = sayi >> 2;
+        num = num >> 2;
     }
 
     printf("%d", sum);
@@ -24,12 +24,12 @@ void cevir(int sayi)
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi gir ");
-    scanf("%d", &sayi);
+    printf("num gir ");
+    scanf("%d", &num);
 
-    cevir(sayi);
+    cevir(num);
 
     return 0;
 }
