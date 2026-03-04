@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int enbuyuk2bul(int arr[], int size)
+int findSecondMax(int arr[], int size)
 {
     if (size == 2)
     {
@@ -15,7 +15,7 @@ int enbuyuk2bul(int arr[], int size)
         return arr[1];
     }
 
-    enbuyuk2bul(arr + 1, size - 1);
+    findSecondMax(arr + 1, size - 1);
 
     int current = arr[0];
     int maxrest = arr[1];
@@ -42,11 +42,11 @@ int enbuyuk2bul(int arr[], int size)
 
 int main()
 {
-    int sayilar[10] = {12, 45, 7, 88, 23, 56, 91, 34, 67, 5};
+    int numbers[10] = {12, 45, 7, 88, 23, 56, 91, 34, 67, 5};
 
     int size = 10;
 
-    int result = enbuyuk2bul(sayilar, size);
+    int result = findSecondMax(numbers, size);
 
     printf("%d", result);
 
