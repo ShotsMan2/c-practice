@@ -52,9 +52,9 @@ int main()
 {
     int sayilar[10] = {12, 45, 7, 89, 23, 56, 92, 34, 67, 5};
 
-    int boyut = 10;
+    int size = 10;
 
-    int result = maxminfark(sayilar, boyut);
+    int result = maxminfark(sayilar, size);
 
     printf("%d", result);
 
