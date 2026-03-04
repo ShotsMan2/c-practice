@@ -22,7 +22,7 @@ int asalmi(int num1, int bolen)
 
     return asalmi(num1, bolen - 1);
 }
-int asalsay(int num1, int num2)
+int countPrimes(int num1, int num2)
 {
     if (num1 == num2)
     {
@@ -33,11 +33,11 @@ int asalsay(int num1, int num2)
 
     if (asal == 1)
     {
-        return 1 + asalsay(num1 + 1, num2);
+        return 1 + countPrimes(num1 + 1, num2);
     }
     else
     {
-        return asalsay(num1 + 1, num2);
+        return countPrimes(num1 + 1, num2);
     }
 }
 
@@ -58,7 +58,7 @@ int main()
         num2 = temp;
     }
 
-    int result = asalsay(num1 + 1, num2);
+    int result = countPrimes(num1 + 1, num2);
 
     printf("\n%d", result);
 
