@@ -2,39 +2,39 @@
 #include <stdlib.h>
 #include <time.h>
 
-void adet01(int sayi, int birler, int sifirlar)
+void adet01(int num, int birler, int sifirlar)
 {
-    if (sayi == 0)
+    if (num == 0)
     {
         printf("1= %d   0= %d", birler, sifirlar);
         return;
     }
 
-    int bit = sayi & 1;
+    int bit = num & 1;
 
     if (bit == 1)
     {
-        adet01(sayi >> 1, birler + 1, sifirlar);
+        adet01(num >> 1, birler + 1, sifirlar);
     }
     else
     {
-        adet01(sayi >> 1, birler, sifirlar + 1);
+        adet01(num >> 1, birler, sifirlar + 1);
     }
 }
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi gir ");
-    scanf("%d", &sayi);
+    printf("num gir ");
+    scanf("%d", &num);
 
-    if (sayi == 0)
+    if (num == 0)
     {
         printf("1= 0   0= 1\n");
     }
     else
     {
-        adet01(sayi, 0, 0);
+        adet01(num, 0, 0);
     }
 }
