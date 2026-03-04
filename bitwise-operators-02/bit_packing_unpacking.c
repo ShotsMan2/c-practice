@@ -10,9 +10,9 @@ void cevir(int sayi1, int sayi2)
 
     printf("%d\n", data);
 
-    int cozulensayi2 = data & 255;
+    int cozulensayi2 = data & 0xFF;
 
-    int cozulensayi1 = (data >> 8) & 255;
+    int cozulensayi1 = (data >> 8) & 0xFF;
 
     printf("sayi1= %d\n", cozulensayi1);
     printf("sayi2= %d\n", cozulensayi2);
