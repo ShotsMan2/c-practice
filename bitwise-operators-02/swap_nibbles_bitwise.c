@@ -2,25 +2,25 @@
 #include <stdlib.h>
 #include <time.h>
 
-void cevir(int sayi)
+void cevir(int num)
 {
-    int sagtaraf = (sayi & 15) << 4;
+    int sagtaraf = (num & 15) << 4;
 
-    int soltaraf = (sayi >> 4) & 15;
+    int soltaraf = (num >> 4) & 15;
 
-    int sonuc = sagtaraf | soltaraf;
+    int result = sagtaraf | soltaraf;
 
-    printf("%d %d", sayi, sonuc);
+    printf("%d %d", num, result);
 }
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi gir ");
-    scanf("%d", &sayi);
+    printf("Enter a number ");
+    scanf("%d", &num);
 
-    cevir(sayi);
+    cevir(num);
 
     return 0;
 }
