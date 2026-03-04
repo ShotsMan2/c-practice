@@ -2,24 +2,24 @@
 #include <stdlib.h>
 #include <time.h>
 
-int usal(int taban, int us)
+int power(int base, int exponent)
 {
-    if (us == 0)
+    if (exponent == 0)
     {
         return 1;
     }
 
-    return taban * usal(10, us - 1);
+    return base * power(10, exponent - 1);
 }
 
-int basamakbul(int num)
+int countDigits(int num)
 {
     if (num > -10 && num < 10)
     {
         return 1;
     }
 
-    return 1 + basamakbul(num / 10);
+    return 1 + countDigits(num / 10);
 }
 
 int cevir(int num)
@@ -29,9 +29,9 @@ int cevir(int num)
         return 9;
     }
 
-    int basamak = basamakbul(num);
+    int digit = countDigits(num);
 
-    return usal(10, basamak - 1) * 9 + cevir(num / 10);
+    return power(10, digit - 1) * 9 + cevir(num / 10);
 }
 
 int main()
