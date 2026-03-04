@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int asalmi(int num1, int bolen)
+int isPrime(int num1, int divisor)
 {
 
     if (num1 < 2)
@@ -10,17 +10,17 @@ int asalmi(int num1, int bolen)
         return 0;
     }
 
-    if (bolen == 1)
+    if (divisor == 1)
     {
         return 1;
     }
 
-    if (num1 % bolen == 0)
+    if (num1 % divisor == 0)
     {
         return 0;
     }
 
-    return asalmi(num1, bolen - 1);
+    return isPrime(num1, divisor - 1);
 }
 int countPrimes(int num1, int num2)
 {
@@ -29,9 +29,9 @@ int countPrimes(int num1, int num2)
         return 0;
     }
 
-    int asal = asalmi(num1, num1 / 2);
+    int prime = isPrime(num1, num1 / 2);
 
-    if (asal == 1)
+    if (prime == 1)
     {
         return 1 + countPrimes(num1 + 1, num2);
     }
