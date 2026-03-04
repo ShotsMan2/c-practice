@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-int basamakbul(int num)
+int countdigits(int num)
 {
     if (num > -10 && num < 10)
     {
         return 1;
     }
 
-    return 1 + basamakbul(num / 10);
+    return 1 + countdigits(num / 10);
 }
 
 int main()
@@ -19,7 +19,7 @@ int main()
     printf("Enter a number ");
     scanf("%d", &num);
 
-    int result = basamakbul(num);
+    int result = countdigits(num);
 
     printf("%d", result);
 
