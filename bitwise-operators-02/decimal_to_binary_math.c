@@ -4,28 +4,28 @@
 
 int main()
 {
-    int sayi, bit;
+    int num, bit;
     long ikilikarsilik = 0;
     long carpan = 1;
 
-    printf("sayiyi gir ");
-    scanf("%d", &sayi);
+    printf("numyi gir ");
+    scanf("%d", &num);
 
-    if (sayi == 0)
+    if (num == 0)
     {
         printf("0\n");
     }
     else
     {
-        while (sayi > 0)
+        while (num > 0)
         {
-            bit = sayi & 1;
+            bit = num & 1;
 
             ikilikarsilik = ikilikarsilik + (carpan * bit);
 
             carpan = carpan * 10;
 
-            sayi = sayi >> 1;
+            num = num >> 1;
         }
 
         printf("%ld\n", ikilikarsilik);
