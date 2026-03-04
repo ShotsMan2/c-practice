@@ -2,22 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-int enkucukbul(int arr[], int size)
+int findMin(int arr[], int size)
 {
     if (size == 1)
     {
         return arr[0];
     }
 
-    int kalanenkucuk = enkucukbul(arr, size - 1);
+    int rustMin = findMin(arr, size - 1);
 
-    if (kalanenkucuk > arr[size - 1])
+    if (rustMin > arr[size - 1])
     {
         return arr[size - 1];
     }
     else
     {
-        return kalanenkucuk;
+        return rustMin;
     }
 }
 
@@ -40,21 +40,21 @@ int enbuyukbul(int arr[], int size)
     }
 }
 
-int maxminfark(int arr[], int size)
+int maxMinDiff(int arr[], int size)
 {
     int max = enbuyukbul(arr, size);
-    int min = enkucukbul(arr, size);
+    int min = findMin(arr, size);
 
     return max - min;
 }
 
 int main()
 {
-    int sayilar[10] = {12, 45, 7, 89, 23, 56, 92, 34, 67, 5};
+    int numbers[10] = {12, 45, 7, 89, 23, 56, 92, 34, 67, 5};
 
     int size = 10;
 
-    int result = maxminfark(sayilar, size);
+    int result = maxMinDiff(numbers, size);
 
     printf("%d", result);
 
