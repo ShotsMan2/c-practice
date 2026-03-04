@@ -2,37 +2,37 @@
 #include <stdlib.h>
 #include <time.h>
 
-int bolentoplami(int num, int bolen)
+int sumOfDivisors(int num, int divisor)
 {
-    if (bolen == 0)
+    if (divisor == 0)
     {
         return 0;
     }
 
-    if (num % bolen == 0)
+    if (num % divisor == 0)
     {
-        return bolen + bolentoplami(num, bolen - 1);
+        return divisor + sumOfDivisors(num, divisor - 1);
     }
     else
     {
-        return bolentoplami(num, bolen - 1);
+        return sumOfDivisors(num, divisor - 1);
     }
 }
-int mukemmelbul(int num)
+int findPerfect(int num)
 {
     if (num < 6)
     {
         return -1;
     }
     
-    int toplam = bolentoplami(num, num - 1);
+    int sum = sumOfDivisors(num, num - 1);
 
-    if (toplam == num)
+    if (sum == num)
     {
-        return toplam;
+        return sum;
     }
 
-    return mukemmelbul(num - 1);
+    return findPerfect(num - 1);
 }
 
 int main()
@@ -42,7 +42,7 @@ int main()
     printf("Enter a number ");
     scanf("%d", &num);
 
-    int result = mukemmelbul(num - 1);
+    int result = findPerfect(num - 1);
 
     if (result == -1)
     {
