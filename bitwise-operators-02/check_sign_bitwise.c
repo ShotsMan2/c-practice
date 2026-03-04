@@ -2,20 +2,20 @@
 #include <stdlib.h>
 #include <time.h>
 
-void isaret(int sayi)
+void sign(int num)
 {
     int i;
 
     for (i = 31; i >= 0; i--)
     {
-        int bit = (sayi >> i) & 1;
+        int bit = (num >> i) & 1;
         printf("%d", bit);
     }
     printf("\n");
 
-    int isaretbiti = (sayi >> 31) & 1;
+    int signbiti = (num >> 31) & 1;
 
-    if (isaretbiti == 1)
+    if (signbiti == 1)
     {
         printf("negaitve");
     }
@@ -27,10 +27,10 @@ void isaret(int sayi)
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi girin ");
-    scanf("%d", &sayi);
+    printf("num girin ");
+    scanf("%d", &num);
 
-    isaret(sayi);
+    sign(num);
 }
