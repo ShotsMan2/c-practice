@@ -12,36 +12,36 @@ int usal(int taban, int us)
     return taban * usal(10, us - 1);
 }
 
-int basamakbul(int sayi)
+int basamakbul(int num)
 {
-    if (sayi > -10 && sayi < 10)
+    if (num > -10 && num < 10)
     {
         return 1;
     }
 
-    return 1 + basamakbul(sayi / 10);
+    return 1 + basamakbul(num / 10);
 }
 
-int cevir(int sayi)
+int cevir(int num)
 {
-    if (sayi > -10 && sayi < 10)
+    if (num > -10 && num < 10)
     {
         return 9;
     }
 
-    int basamak = basamakbul(sayi);
+    int basamak = basamakbul(num);
 
-    return usal(10, basamak - 1) * 9 + cevir(sayi / 10);
+    return usal(10, basamak - 1) * 9 + cevir(num / 10);
 }
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi gir ");
-    scanf("%d", &sayi);
+    printf("Enter a number ");
+    scanf("%d", &num);
 
-    int result = cevir(sayi);
+    int result = cevir(num);
 
     printf("%d", result);
 
