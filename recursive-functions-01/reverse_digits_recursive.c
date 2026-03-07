@@ -12,40 +12,40 @@ int usal(int taban, int us)
     return taban * usal(taban, us - 1);
 }
 
-int basamakbul(int sayi)
+int basamakbul(int num)
 {
-    if (sayi > -10 && sayi < 10)
+    if (num > -10 && num < 10)
     {
         return 1;
     }
 
-    return 1 + basamakbul(sayi / 10);
+    return 1 + basamakbul(num / 10);
 }
 
-int terscevir(int sayi)
+int terscevir(int num)
 {
-    if (sayi > -10 && sayi < 10)
+    if (num > -10 && num < 10)
     {
-        return sayi;
+        return num;
     }
 
-    int basamak = basamakbul(sayi);
+    int basamak = basamakbul(num);
 
-    int sonrakam = sayi % 10;
+    int sonrakam = num % 10;
 
-    int kalansayi = sayi / 10;
+    int kalannum = num / 10;
 
-    return (sonrakam * usal(10, basamak - 1)) + terscevir(kalansayi);
+    return (sonrakam * usal(10, basamak - 1)) + terscevir(kalannum);
 }
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi gir ");
-    scanf("%d", &sayi);
+    printf("Enter a number ");
+    scanf("%d", &num);
 
-    int result = terscevir(sayi);
+    int result = terscevir(num);
 
     printf("%d", result);
 

@@ -2,24 +2,24 @@
 #include <stdlib.h>
 #include <time.h>
 
-int basamakbul(int sayi)
+int countdigits(int num)
 {
-    if (sayi > -10 && sayi < 10)
+    if (num > -10 && num < 10)
     {
         return 1;
     }
 
-    return 1 + basamakbul(sayi / 10);
+    return 1 + countdigits(num / 10);
 }
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi gir ");
-    scanf("%d", &sayi);
+    printf("Enter a number ");
+    scanf("%d", &num);
 
-    int result = basamakbul(sayi);
+    int result = countdigits(num);
 
     printf("%d", result);
 

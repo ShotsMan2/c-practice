@@ -2,37 +2,37 @@
 #include <stdlib.h>
 #include <time.h>
 
-int enkucukbul(int arr[], int size)
+int findMin(int arr[], int size)
 {
     if (size == 1)
     {
         return arr[0];
     }
 
-    int kalanenkucuk = enkucukbul(arr, size - 1);
+    int minOfRest = findMin(arr, size - 1);
 
-    if (kalanenkucuk > arr[size - 1])
+    if (minOfRest > arr[size - 1])
     {
         return arr[size - 1];
     }
     else
     {
-        return kalanenkucuk;
+        return minOfRest;
     }
 }
 
-int enbuyukbul(int arr[], int size)
+int findMax(int arr[], int size)
 {
     if (size == 1)
     {
         return arr[0];
     }
 
-    int kalanenbuyuk = enbuyukbul(arr, size - 1);
+    int maxOfRest = findMax(arr, size - 1);
 
-    if (kalanenbuyuk > arr[size - 1])
+    if (maxOfRest > arr[size - 1])
     {
-        return kalanenbuyuk;
+        return maxOfRest;
     }
     else
     {
@@ -40,21 +40,21 @@ int enbuyukbul(int arr[], int size)
     }
 }
 
-int maxminfark(int arr[], int size)
+int maxMinDiff(int arr[], int size)
 {
-    int max = enbuyukbul(arr, size);
-    int min = enkucukbul(arr, size);
+    int max = findMax(arr, size);
+    int min = findMin(arr, size);
 
     return max - min;
 }
 
 int main()
 {
-    int sayilar[10] = {12, 45, 7, 89, 23, 56, 92, 34, 67, 5};
+    int numbers[10] = {12, 45, 7, 89, 23, 56, 92, 34, 67, 5};
 
-    int boyut = 10;
+    int size = 10;
 
-    int result = maxminfark(sayilar, boyut);
+    int result = maxMinDiff(numbers, size);
 
     printf("%d", result);
 

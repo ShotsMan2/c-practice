@@ -2,63 +2,63 @@
 #include <stdlib.h>
 #include <time.h>
 
-int asalmi(int s1, int bolen)
+int isPrime(int num1, int divisor)
 {
 
-    if (s1 < 2)
+    if (num1 < 2)
     {
         return 0;
     }
 
-    if (bolen == 1)
+    if (divisor == 1)
     {
         return 1;
     }
 
-    if (s1 % bolen == 0)
+    if (num1 % divisor == 0)
     {
         return 0;
     }
 
-    return asalmi(s1, bolen - 1);
+    return isPrime(num1, divisor - 1);
 }
-int asalsay(int s1, int s2)
+int countPrimes(int num1, int num2)
 {
-    if (s1 == s2)
+    if (num1 == num2)
     {
         return 0;
     }
 
-    int asal = asalmi(s1, s1 / 2);
+    int prime = isPrime(num1, num1 / 2);
 
-    if (asal == 1)
+    if (prime == 1)
     {
-        return 1 + asalsay(s1 + 1, s2);
+        return 1 + countPrimes(num1 + 1, num2);
     }
     else
     {
-        return asalsay(s1 + 1, s2);
+        return countPrimes(num1 + 1, num2);
     }
 }
 
 int main()
 {
-    int s1, s2, temp;
+    int num1, num2, temp;
 
-    printf("say1 gir ");
-    scanf("%d", &s1);
+    printf("Enter a num1 ");
+    scanf("%d", &num1);
 
-    printf("say2 gir ");
-    scanf("%d", &s2);
+    printf("Enter a num2 ");
+    scanf("%d", &num2);
 
-    if (s1 > s2)
+    if (num1 > num2)
     {
-        temp = s1;
-        s1 = s2;
-        s2 = temp;
+        temp = num1;
+        num1 = num2;
+        num2 = temp;
     }
 
-    int result = asalsay(s1 + 1, s2);
+    int result = countPrimes(num1 + 1, num2);
 
     printf("\n%d", result);
 

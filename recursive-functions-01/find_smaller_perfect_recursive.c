@@ -2,55 +2,55 @@
 #include <stdlib.h>
 #include <time.h>
 
-int bolentoplami(int sayi, int bolen)
+int sumOfDivisors(int num, int divisor)
 {
-    if (bolen == 0)
+    if (divisor == 0)
     {
         return 0;
     }
 
-    if (sayi % bolen == 0)
+    if (num % divisor == 0)
     {
-        return bolen + bolentoplami(sayi, bolen - 1);
+        return divisor + sumOfDivisors(num, divisor - 1);
     }
     else
     {
-        return bolentoplami(sayi, bolen - 1);
+        return sumOfDivisors(num, divisor - 1);
     }
 }
-int mukemmelbul(int sayi)
+int findPerfect(int num)
 {
-    if (sayi < 6)
+    if (num < 6)
     {
         return -1;
     }
     
-    int toplam = bolentoplami(sayi, sayi - 1);
+    int sum = sumOfDivisors(num, num - 1);
 
-    if (toplam == sayi)
+    if (sum == num)
     {
-        return toplam;
+        return sum;
     }
 
-    return mukemmelbul(sayi - 1);
+    return findPerfect(num - 1);
 }
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi gir ");
-    scanf("%d", &sayi);
+    printf("Enter a number ");
+    scanf("%d", &num);
 
-    int result = mukemmelbul(sayi - 1);
+    int result = findPerfect(num - 1);
 
     if (result == -1)
     {
-        printf("muk sayi yok");
+        printf("No perfect number found.\n");
     }
     else
     {
-        printf("muk sayi: %d", result);
+        printf("Perfect Number: %d", result);
     }
 
     return 0;

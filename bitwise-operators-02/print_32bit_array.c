@@ -2,39 +2,39 @@
 #include <stdlib.h>
 #include <time.h>
 
-void isaret(int sayi)
+void isaret(int num)
 {
-    int dizi[32] = {0};
+    int arr[32] = {0};
     int i = 0, j;
 
-    if (sayi == 0)
+    if (num == 0)
     {
         printf("00000000000000000000000000000000");
         return;
     }
 
-    while (sayi > 0)
+    while (num > 0)
     {
-        dizi[i] = sayi & 1;
+        arr[i] = num & 1;
 
-        sayi = sayi >> 1;
+        num = num >> 1;
 
         i++;
     }
 
     for (j = 31; j >= 0; j--)
     {
-        printf("%d", dizi[j]);
+        printf("%d", arr[j]);
     }
     printf("\n");
 }
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayi girin ");
-    scanf("%d", &sayi);
+    printf("num girin ");
+    scanf("%d", &num);
 
-    isaret(sayi);
+    isaret(num);
 }

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int buyukmu(int arr[], int size)
+int greaterThan(int arr[], int size)
 {
     if (size <= 1)
     {
@@ -11,11 +11,11 @@ int buyukmu(int arr[], int size)
 
     if (arr[size - 2] < arr[size - 1])
     {
-        return 1 + buyukmu(arr, size - 1);
+        return 1 + greaterThan(arr, size - 1);
     }
     else
     {
-        return buyukmu(arr, size - 1);
+        return greaterThan(arr, size - 1);
     }
 }
 
@@ -25,7 +25,7 @@ int main()
 
     int size = 8;
 
-    int result = buyukmu(arr, size);
+    int result = greaterThan(arr, size);
 
     printf("%d", result);
 

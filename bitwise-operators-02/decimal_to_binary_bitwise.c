@@ -2,22 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-void ikili(int sayi)
+void ikili(int num)
 {
     int dizi[32];
     int i = 0, j;
 
-    if (sayi == 0)
+    if (num == 0)
     {
         printf("0");
         return;
     }
 
-    while (sayi > 0)
+    while (num > 0)
     {
-        dizi[i] = sayi & 1;
+        dizi[i] = num & 1;
 
-        sayi = sayi >> 1;
+        num = num >> 1;
 
         i++;
     }
@@ -31,10 +31,10 @@ void ikili(int sayi)
 
 int main()
 {
-    int sayi;
+    int num;
 
-    printf("sayiyi gir ");
-    scanf("%d", &sayi);
+    printf("numyi gir ");
+    scanf("%d", &num);
 
-    ikili(sayi);
+    ikili(num);
 }
