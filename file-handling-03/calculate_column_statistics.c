@@ -10,7 +10,7 @@ int main()
     fptr = fopen("randomnumber.txt", "r");
     if (fptr == NULL)
     {
-        printf("unsc");
+        printf("unsuccessful");
     }
     else
     {
@@ -22,12 +22,12 @@ int main()
             }
         }
 
-        printf("scs");
+        printf("successful");
     }
 
     if (fptr == NULL)
     {
-        printf("unsc");
+        printf("unsuccessful");
     }
     else
     {
@@ -52,7 +52,7 @@ int main()
             avg[j] = sum[j] / 10;
         }
 
-        printf("scs");
+        printf("successful");
         fclose(fptr);
     }
 
