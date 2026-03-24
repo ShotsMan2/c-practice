@@ -6,7 +6,7 @@
 
 int main()
 {
-    char opsiyon[10], depo[6][50];
+    char choice[10], depo[6][50];
     int i = 0;
 
     FILE *fptr, *fyaz;
@@ -19,8 +19,8 @@ int main()
     else
     {
         printf("tek mi cift mi ");
-        scanf("%s", opsiyon);
-        if (strcmp(opsiyon, "tek") == 0)
+        scanf("%s", choice);
+        if (strcmp(choice, "tek") == 0)
         {
             while (fgets(depo[i], sizeof(depo[i]), fptr) != NULL)
             {
@@ -32,7 +32,7 @@ int main()
             }
             printf("scs");
         }
-        else if (strcmp(opsiyon, "cift") == 0)
+        else if (strcmp(choice, "cift") == 0)
         {
             while (fgets(depo[i], sizeof(depo[i]), fptr) != NULL)
             {
