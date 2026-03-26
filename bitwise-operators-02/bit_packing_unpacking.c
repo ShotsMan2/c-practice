@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void cevir(int num1, int num2)
+void translate(int num1, int num2)
 {
     int data;
 
@@ -22,7 +22,7 @@ int main()
 {
     int num1 = 5, num2 = 7;
 
-    cevir(num1, num2);
+    translate(num1, num2);
 
     return 0;
 }
