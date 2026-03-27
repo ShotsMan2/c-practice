@@ -29,7 +29,7 @@ int main()
 {
     int num;
 
-    printf("num girin ");
+    printf("Enter a number ");
     scanf("%d", &num);
 
     sign(num);
