@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void bityazdir(int sayi)
+void printbit(int sayi)
 {
     int i;
 
@@ -13,7 +13,7 @@ void bityazdir(int sayi)
         printf("%d", bit);
     }
 }
-void bityazdir6(int sayi)
+void printbit6(int sayi)
 {
     int i;
 
@@ -39,7 +39,7 @@ int main()
     for (i = 0; i < 5; i++)
     {
         printf("%d(", arr[i]);
-        bityazdir(arr[i]);
+        printbit(arr[i]);
         printf("), ");
     }
     printf("\n");
@@ -60,7 +60,7 @@ int main()
     for (i = 0; i < 5; i++)
     {
 
-        bityazdir(arr[i]);
+        printbit(arr[i]);
         printf(", ");
     }
     printf("\n");
@@ -74,7 +74,7 @@ int main()
     for (i = 0; i < 5; i++)
     {
 
-        bityazdir(arr[i]);
+        printbit(arr[i]);
         printf(", ");
     }
     printf("\n");
@@ -92,7 +92,7 @@ int main()
     for (i = 0; i < 5; i++)
     {
 
-        bityazdir6(arr[i]);
+        printbit6(arr[i]);
         printf("= %d", arr[i]);
         printf(", ");
     }

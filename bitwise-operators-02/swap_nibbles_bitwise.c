@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void cevir(int num)
+void translate(int num)
 {
     int sagtaraf = (num & 15) << 4;
 
@@ -20,7 +20,7 @@ int main()
     printf("Enter a number ");
     scanf("%d", &num);
 
-    cevir(num);
+    translate(num);
 
     return 0;
 }
