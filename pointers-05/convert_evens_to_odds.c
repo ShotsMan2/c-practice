@@ -13,7 +13,7 @@ int main()
     {
         if (*(sayilar + i) % 2 == 0)
         {
-            *(sayilar + i) = *(sayilar + i) + 1;
+            (*(sayilar + i))++;
         }
     }
 
