@@ -24,9 +24,9 @@ void translate(int arr[])
 
 int main()
 {
-    int dizi[8] = {10, 20, 30, 40, 50, 60, 70, 80};
+    int arr[8] = {10, 20, 30, 40, 50, 60, 70, 80};
 
-    translate(dizi);
+    translate(arr);
 
     return 0;
 }
