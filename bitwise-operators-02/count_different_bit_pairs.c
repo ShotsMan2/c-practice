@@ -26,7 +26,7 @@ int main()
 {
     int num;
 
-    printf("num gir ");
+    printf("Enter a number ");
     scanf("%d", &num);
 
     cevir(num);
