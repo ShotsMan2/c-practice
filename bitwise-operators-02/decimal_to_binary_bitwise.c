@@ -4,7 +4,7 @@
 
 void ikili(int num)
 {
-    int dizi[32];
+    int arr[32];
     int i = 0, j;
 
     if (num == 0)
@@ -15,7 +15,7 @@ void ikili(int num)
 
     while (num > 0)
     {
-        dizi[i] = num & 1;
+        arr[i] = num & 1;
 
         num = num >> 1;
 
@@ -24,7 +24,7 @@ void ikili(int num)
 
     for (j = i - 1; j >= 0; j--)
     {
-        printf("%d", dizi[j]);
+        printf("%d", arr[j]);
     }
     printf("\n");
 }
