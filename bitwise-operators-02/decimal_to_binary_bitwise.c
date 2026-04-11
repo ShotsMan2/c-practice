@@ -33,7 +33,7 @@ int main()
 {
     int num;
 
-    printf("numyi gir ");
+    printf("Enter a number ");
     scanf("%d", &num);
 
     ikili(num);
