@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void cevir(int arr[])
+void translate(int arr[])
 {
     unsigned long long data = 0;
     int base[8], j = 8, i;
@@ -24,9 +24,9 @@ void cevir(int arr[])
 
 int main()
 {
-    int dizi[8] = {10, 20, 30, 40, 50, 60, 70, 80};
+    int arr[8] = {10, 20, 30, 40, 50, 60, 70, 80};
 
-    cevir(dizi);
+    translate(arr);
 
     return 0;
 }

@@ -8,7 +8,7 @@ int main()
     long ikilikarsilik = 0;
     long carpan = 1;
 
-    printf("numyi gir ");
+    printf("Enter a number ");
     scanf("%d", &num);
 
     if (num == 0)
