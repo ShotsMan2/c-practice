@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void adet01(int num, int birler, int sifirlar)
+void count01(int num, int birler, int sifirlar)
 {
     if (num == 0)
     {
@@ -14,11 +14,11 @@ void adet01(int num, int birler, int sifirlar)
 
     if (bit == 1)
     {
-        adet01(num >> 1, birler + 1, sifirlar);
+        count01(num >> 1, birler + 1, sifirlar);
     }
     else
     {
-        adet01(num >> 1, birler, sifirlar + 1);
+        count01(num >> 1, birler, sifirlar + 1);
     }
 }
 
@@ -35,6 +35,6 @@ int main()
     }
     else
     {
-        adet01(num, 0, 0);
+        count01(num, 0, 0);
     }
 }
