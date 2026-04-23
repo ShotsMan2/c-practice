@@ -19,7 +19,7 @@ int main()
 
     for (;;)
     {
-        printf("veri gir ");
+        printf("Enter a data ");
         scanf("%d", &num);
 
         if (num == -1)
@@ -43,7 +43,7 @@ int main()
         }
     }
 
-    printf("sayi gir ");
+    printf("Enter a num ");
     scanf("%d", &sayi);
 
     node *temp = head;

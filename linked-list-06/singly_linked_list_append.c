@@ -18,7 +18,7 @@ int main()
 
     for (;;)
     {
-        printf("veri gir ");
+        printf("Enter a data ");
         scanf("%d", &num);
 
         if (num == -1)
