@@ -43,7 +43,7 @@ int main()
         }
     }
 
-    printf("sayi gir ");
+    printf("Enter a num ");
     scanf("%d", &sayi);
 
     node *temp = head;
