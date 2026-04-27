@@ -6,8 +6,8 @@
 
 int main()
 {
-    int num, i, dif = 0, count, uygun = 1, sayilar[] = {1, 6, 5, 2, 1, 4, 2};
-    int size = sizeof(sayilar) / sizeof(sayilar[0]);
+    int num, i, dif = 0, count, uygun = 1, numbers[] = {1, 6, 5, 2, 1, 4, 2};
+    int size = sizeof(numbers) / sizeof(numbers[0]);
 
     while (uygun == 1)
     {
@@ -18,9 +18,9 @@ int main()
 
         for (i = 0; i < size; i++)
         {
-            if (num == *(sayilar + i))
+            if (num == *(numbers + i))
             {
-                *(sayilar + i) = -1;
+                *(numbers + i) = -1;
                 count++;
             }
         }
@@ -34,7 +34,7 @@ int main()
 
         for (i = 0; i < size; i++)
         {
-            if (*(sayilar + i) != -1)
+            if (*(numbers + i) != -1)
             {
                 uygun = 1;
             }
