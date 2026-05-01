@@ -15,7 +15,7 @@ int main()
 
     for (i = 0; i < n; i++)
     {
-        printf("sayi gir");
+        printf("Enter a num ");
         scanf("%d", (arr + i));
     }
 
