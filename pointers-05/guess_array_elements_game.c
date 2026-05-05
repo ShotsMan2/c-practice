@@ -11,7 +11,7 @@ int main()
 
     while (uygun == 1)
     {
-        printf("sayi gir ");
+        printf("Enter a number ");
         scanf("%d", &num);
 
         count = 0;

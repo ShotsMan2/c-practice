@@ -8,14 +8,14 @@ int main()
 {
     int n, i, pozsayac = 0, negsayac = 0;
 
-    printf("n i girin ");
+    printf("Enter a n ");
     scanf("%d", &n);
 
     int arr[n], poz[n], neg[n];
 
     for (i = 0; i < n; i++)
     {
-        printf("sayi gir");
+        printf("Enter a num ");
         scanf("%d", (arr + i));
     }
 
