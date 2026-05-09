@@ -10,7 +10,7 @@ int main()
 
     srand(time(NULL));
 
-    printf("n i girin ");
+    printf("Enter a n ");
     scanf("%d", &n);
 
     getchar();
